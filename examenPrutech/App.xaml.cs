@@ -8,7 +8,9 @@ namespace examenPrutech
 		{
 			InitializeComponent();
 
-			MainPage = new examenPrutechPage();
+			NavigationPage np = new NavigationPage(new ListaEstaciones());
+			np.Style = Resources["NavigationPage"] as Style;
+			MainPage = np;
 		}
 
 		protected override void OnStart()

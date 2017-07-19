@@ -1,6 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="examenPrutech.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Style x:Key="NavigationPage" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#003764" />
+                <Setter Property="BarTextColor" Value="#8BC640" />
+                <Setter Property="Icon" Value="logo.png" />
+            </Style>
+            <Style x:Key="rowsucursaltitle" TargetType="Label">
+            	<Setter Property="FontAttributes" Value="Bold" />
+            	<Setter Property="FontSize" Value="Medium" />
+            	<Setter Property="VerticalTextAlignment" Value="Center" />
+            	<Setter Property="TextColor" Value="#003764" />
+            </Style>
+            <Style x:Key="rowsucursaldet" TargetType="Label">
+            	<Setter Property="FontSize" Value="Small" />
+            	<Setter Property="VerticalTextAlignment" Value="Center" />
+            	<Setter Property="TextColor" Value="#cccccc" />
+            </Style>
+            <Style x:Key="labelSucursalTitle" TargetType="Label">
+            	<Setter Property="FontAttributes" Value="Bold" />
+            	<Setter Property="FontSize" Value="Small" />
+            	<Setter Property="VerticalTextAlignment" Value="Center" />
+            	<Setter Property="TextColor" Value="#003764" />
+            </Style>
+            <Style x:Key="labelSucursalDet" TargetType="Label">
+            	<Setter Property="FontAttributes" Value="Bold" />
+            	<Setter Property="FontSize" Value="Micro" />
+            	<Setter Property="VerticalTextAlignment" Value="Center" />
+            	<Setter Property="TextColor" Value="#cccccc" />
+            </Style>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>
