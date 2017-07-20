@@ -8,11 +8,11 @@ using Android.Locations;
 using Android.OS;
 using Android.Runtime;
 using Xamarin.Forms;
-using examenresuelve.Droid;
+using examenPrutech.Droid;
 
 [assembly: Xamarin.Forms.Dependency(typeof(GeoDroid))]
 
-namespace examenresuelve.Droid
+namespace examenPrutech.Droid
 {
     public class GeoDroid : Java.Lang.Object, IGeo, ILocationListener
     {
@@ -29,7 +29,7 @@ namespace examenresuelve.Droid
             lm.RequestLocationUpdates(LocationManager.NetworkProvider, 0, 0, this);
         }
 
-        public void OnLocationChanged(Location location)
+		public void OnLocationChanged(Android.Locations.Location location)
         {
             if (location != null)
             {

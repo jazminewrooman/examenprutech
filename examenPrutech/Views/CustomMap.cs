@@ -8,24 +8,24 @@ namespace examenPrutech
 {
 	public class CustomMap : Map
 	{
-		public static readonly BindableProperty PosicionProperty = BindableProperty.Create(nameof(Posicion), typeof(Pin), typeof(CustomMap), propertyChanged: CambiaPos);
-		public Pin Posicion
+		public static readonly BindableProperty PinPosicionProperty = BindableProperty.Create(nameof(PinPosicion), typeof(Pin), typeof(CustomMap), propertyChanged: CambiaPos);
+		public Pin PinPosicion
 		{
-            get { return (Pin)GetValue(PosicionProperty); }
+            get { return (Pin)GetValue(PinPosicionProperty); }
 			set { 
-                SetValue(PosicionProperty, value);
+                SetValue(PinPosicionProperty, value);
 			}
 		}
 
-        /*public static readonly BindableProperty SucursalProperty = BindableProperty.Create(nameof(Sucursal), typeof(Pin), typeof(CustomMap), propertyChanged: CambiaSuc);
-		public Pin Sucursal
+        public static readonly BindableProperty PinEstacionProperty = BindableProperty.Create(nameof(PinEstacion), typeof(Pin), typeof(CustomMap), propertyChanged: CambiaEst);
+		public Pin PinEstacion
 		{
-			get { return (Pin)GetValue(SucursalProperty); }
+			get { return (Pin)GetValue(PinEstacionProperty); }
 			set
 			{
-				SetValue(SucursalProperty, value);
+                SetValue(PinEstacionProperty, value);
 			}
-		}*/
+		}
 
         static void CambiaPos(BindableObject bindable, object oldValue, object newValue)
 		{
@@ -33,10 +33,10 @@ namespace examenPrutech
             (bindable as CustomMap).Pins.Add(newValue as Pin);
 		}
 
-		/*static void CambiaSuc(BindableObject bindable, object oldValue, object newValue)
+		static void CambiaEst(BindableObject bindable, object oldValue, object newValue)
 		{
 			(bindable as CustomMap).Pins.Add(newValue as Pin);
-		}*/
+		}
 
 		public void CentraMapa(Pin p)
 		{

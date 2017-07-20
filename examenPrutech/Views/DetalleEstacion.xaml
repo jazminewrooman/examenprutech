@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="examenPrutech.DetalleEstacion"
+<ContentPage Title="{Binding Title}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="examenPrutech.DetalleEstacion"
 	    xmlns:local="clr-namespace:examenPrutech;">
 	<ContentPage.Content>
 		<Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-				<RowDefinition Height="100" />
+				<RowDefinition Height="80" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 			<ScrollView Grid.Row="0">
@@ -13,21 +13,18 @@
 						<RowDefinition Height="20" />
 		                <RowDefinition Height="1" />
 						<RowDefinition Height="*" />
-						<RowDefinition Height="10" />
 		            </Grid.RowDefinitions>	
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="10"/>
 						<ColumnDefinition Width="*"/>
 					</Grid.ColumnDefinitions>
-					<Label Grid.Row="0" Grid.ColumnSpan="2" Style="{DynamicResource labelSucursalTitle}" Text="{Binding SucursalSel.SUC_NAME}" />
+					<Label Grid.Row="0" Grid.ColumnSpan="2" Style="{DynamicResource labelEstacionTitle}" Text="{Binding Estacion.name}" />
 					<BoxView Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" Color="#cccccc"/>
 					<Image Grid.Row="2" Grid.Column="0" Source="location"/>
-					<Label Grid.Row="2" Grid.Column="1" Style="{DynamicResource labelSucursalDet}" Text="{Binding SucursalSel.SUC_ADRESS}" />
-					<Image Grid.Row="3" Grid.Column="0" Source="phone"/>
-					<Label Grid.Row="3" Grid.Column="1" Style="{DynamicResource labelSucursalDet}" Text="{Binding SucursalSel.PHONE}" />
+					<Label Grid.Row="2" Grid.Column="1" Style="{DynamicResource labelEstacionDet}" Text="{Binding Estacion.address}" />
 				</Grid>
 			</ScrollView>
-            <local:CustomMap Grid.Row="1" HasZoomEnabled="true" Posicion="{Binding Posicion}" WidthRequest="960" HeightRequest="100" VerticalOptions="FillAndExpand"/>
+            <local:CustomMap Grid.Row="1" HasZoomEnabled="true" PinPosicion="{Binding PinPosicion}" PinEstacion="{Binding PinEstacion}" WidthRequest="960" HeightRequest="100" VerticalOptions="FillAndExpand"/>
         </Grid>
 	</ContentPage.Content>
 </ContentPage>

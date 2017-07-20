@@ -9,11 +9,14 @@ namespace examenPrutech
 	{
 		private Geo mposicion;
 
-		public DetalleEstacion()
+		public DetalleEstacion(ListaEstacionesVM lstvm)
 		{
 			InitializeComponent();
 
-			BindingContext = new DetalleEstacionVM(UserDialogs.Instance);
+			DetalleEstacionVM vm = new DetalleEstacionVM(UserDialogs.Instance);
+			vm.Posicion = lstvm.Posicion;
+			vm.Estacion = lstvm.SelectedStation;
+			BindingContext = vm;
 		}
 	}
 }
